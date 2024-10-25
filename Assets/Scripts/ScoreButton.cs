@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class ScoreButton : MonoBehaviour
 {
     public Button scoreButton;
     public int score = 0;
+    public Action<int> OnScoreChanged;
 
     private void Awake()
     {
@@ -17,6 +19,6 @@ public class ScoreButton : MonoBehaviour
     void PointUp() 
     {
         score += 1;
-        Debug.Log(score);
+        OnScoreChanged?.Invoke(score);
     }
 }

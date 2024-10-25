@@ -13,7 +13,7 @@ public class AnimationController : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         _animatior.SetInteger("State", animationVariable);
 
